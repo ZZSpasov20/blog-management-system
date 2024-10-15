@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2a07c0e0-8e0b-4304-9669-14aaa52306e0" name="wsl">
+        <fileTransfer rootFolder="/home/zhivko/projects/learning" accessType="SFTP" host="172.18.248.6" port="22" sshConfigId="c6a805b2-0ca8-4a41-8f48-2d6fcc330e13" sshConfig="zhivko@172.18.248.6:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
