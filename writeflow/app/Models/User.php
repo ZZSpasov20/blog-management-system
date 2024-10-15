@@ -11,12 +11,31 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+    protected $casts = [
+        'id' => 'string',
+    ];
+
+
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function saves()
+    {
+        return $this->hasMany(Save::class);
+    }
     protected $fillable = [
         'name',
         'email',
