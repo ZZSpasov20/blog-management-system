@@ -15,7 +15,9 @@ class RegisterController extends Controller
             'firstname' => ['required'],
             'lastname'  => ['required'],
             'email'      => ['required', 'email', 'unique:users,email'],
-            'password'   => ['required', Password::min(4), 'confirmed']]);
+            'password'   => ['required', Password::min(4), 'confirmed']], [
+            'email.unique' => 'The provided credentials are invalid.',
+        ]);
 
 
         $attributes['password'] = Hash::make($attributes['password']);

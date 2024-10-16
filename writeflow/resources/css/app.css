@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input{
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+@layer base {
+    :root {
+        --backgroundColor:#ffffff;
+        --backgroundElevatedColor:#000000;
+        --textColor: #242424;
+        --textSubduedColor:#6b6b6b;
+    }
+
+
+}

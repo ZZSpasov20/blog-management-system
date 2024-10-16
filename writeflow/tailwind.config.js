@@ -11,8 +11,16 @@ export default {
     ],
     theme: {
         extend: {
+            colors:{
+                backgroundColor: "var(--backgroundColor)",
+                backgroundElevatedColor: "var(--backgroundElevatedColor)",
+                textColor: "var(--textColor)",
+                textSubduedColor: "var(--textSubduedColor)",
+
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                logoFont: ['Great Vibes', ...defaultTheme.fontFamily.sans],
             },
         },
     },
