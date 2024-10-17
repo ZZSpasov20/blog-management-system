@@ -116,6 +116,8 @@
       <excludeFolder url="file://$MODULE_DIR$/writeflow/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/writeflow/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/writeflow/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/writeflow/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/writeflow/vendor/maximebf/debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

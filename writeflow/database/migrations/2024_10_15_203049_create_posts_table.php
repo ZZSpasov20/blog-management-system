@@ -16,7 +16,6 @@ return new class extends Migration
             $table->uuid('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title', 255);
-            $table->string('slug', 255);
             $table->text('content');
             $table->boolean('published')->default(false);
             $table->date('published_at')->nullable();

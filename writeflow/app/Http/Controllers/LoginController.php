@@ -8,6 +8,9 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
+    public function index(){
+        return view('login');
+    }
     public function store(){
         $attributes = request()->validate([
             'email' => ['required', 'email'],
@@ -28,6 +31,8 @@ class LoginController extends Controller
     public function destroy(){
         Auth::logout();
 
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
         return redirect('/');
     }
 }

@@ -10,6 +10,10 @@ use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
+    public function index(){
+        return view('register');
+    }
+
     public function store(){
         $attributes = request()->validate([
             'firstname' => ['required'],
@@ -25,7 +29,7 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        // Change it to redirect to posts page
+
         return redirect('/');
 
     }

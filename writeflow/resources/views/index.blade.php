@@ -1,35 +1,14 @@
 @php use App\Models\Post;use App\Models\User; @endphp
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Writeflow</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-    <!-- Styles / Scripts -->
-
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-
-    @endif
-
-
-</head>
+<x-head>Writeflow</x-head>
 <body >
     <header class="w-full min-h-[650px] h-screen flex flex-col items-center">
         <x-nav class="border-b-textColor border-b-[1px] border-b-solid"></x-nav>
         <div class="w-[90%]  max-w-[1200px] flex justify-center  items-start flex-grow flex-col gap-y-14 ">
             <h1 class="text-8xl text-textColor ">Technology <br>articles & news</h1>
             <p class="text-xl  text-textColor overflow-hidden  border-r-2 border-r-solid border-r-textColor text-nowrap w-fit" id="typing-container" ></p>
-            <x-button href="{{route('index')}}" size="xl" >Start reading</x-button>
+            <x-button href="{{route('register')}}" size="xl" >Start reading</x-button>
         </div>
         <x-footer class="border-t-textColor border-t-[1px] border-t-solid"></x-footer>
     </header>
