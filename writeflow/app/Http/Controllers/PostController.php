@@ -10,6 +10,12 @@ class PostController extends Controller
     public function create(){
         return view('post.create');
     }
+    public  function userPosts(){
+        $user = auth()->user();
+
+        $posts = Post::where('user_id', $user->id)->with('user')->get();
+        return view('post.userPosts', compact('posts', 'user'));
+    }
     public function store(Request $request){
         $request->validate([
             'title' => ['required', 'max:255'],
@@ -36,5 +42,10 @@ class PostController extends Controller
         }
 
         return redirect()->route('index');
+    }
+
+    public  function show(Post $post){
+
+        return view('post.show', compact('post'));
     }
 }
