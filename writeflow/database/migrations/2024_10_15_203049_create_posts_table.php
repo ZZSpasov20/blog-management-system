@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title', 255);
             $table->text('content');
-            $table->boolean('published')->default(false);
+            $table->boolean('published')->default(0);
             $table->date('published_at')->nullable();
             $table->timestamps();
         });

@@ -25,12 +25,11 @@ class RegisterController extends Controller
 
 
         $attributes['password'] = Hash::make($attributes['password']);
-        $user = User::create($attributes);
 
-        Auth::login($user);
+        User::create($attributes);
 
+        Auth::attempt(['email' => $attributes['email'], 'password' => request('password')]);
 
         return redirect('/');
-
     }
 }

@@ -21,7 +21,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 logoFont: ['Great Vibes', ...defaultTheme.fontFamily.sans],
+                postTitle: ["Noto Serif", ...defaultTheme.fontFamily.sans]
             },
+
         },
     },
     plugins: [],

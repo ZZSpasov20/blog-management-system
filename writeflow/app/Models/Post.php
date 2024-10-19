@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 class Post extends Model
 {
     use HasFactory;
+    protected $fillable = ['user_id', 'title', 'content', 'published', 'published_at'];
     protected $casts = [
         'id' => 'string',
     ];
