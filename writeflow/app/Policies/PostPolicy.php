@@ -17,11 +17,14 @@ class PostPolicy
     }
 
 
-    public function show(User $user, Post $post){
+    public function show(User $user, Post $post) : bool{
 
         if ($post['published']) {
             return true;
         }
-        return Auth::user()['id'] === $post->user_id;
+        return Auth::user()['id'] === $post['user_id'];
+    }
+    public function edit(User $user, Post $post) :bool{
+        return Auth::user()['id'] === $post['user_id'];
     }
 }

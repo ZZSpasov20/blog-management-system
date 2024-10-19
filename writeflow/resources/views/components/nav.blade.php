@@ -2,7 +2,7 @@
     <x-logo ></x-logo>
     <div class="h-full flex gap-x-6 items-center justify-between text-sm">
         <a href="/">Home</a>
-        <a href="#">Posts</a>
+        <a href="{{route('posts.index')}}">Posts</a>
         <a href="{{route('posts.create')}}">Write</a>
         <a href="{{route('posts.userPosts')}}">My posts</a>
         @guest

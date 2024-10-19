@@ -7,6 +7,10 @@
         <div class="w-full flex  flex-col gap-y-4 ">
             <h1 class="text-3xl text-textColor">Posts by {{ $user->firstname }}</h1>
 
+            @if($posts->isEmpty())
+                <p class="text-textColor text-lg">Sorry, but currently you do not have posts.</p>
+            @endif
+
             @foreach($posts as $post)
                 <x-post :post="$post"></x-post>
 

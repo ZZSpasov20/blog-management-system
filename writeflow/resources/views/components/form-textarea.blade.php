@@ -7,16 +7,12 @@
            flex items-center text-textColor  ' . $textSize] )  }}
          placeholder="{{$placeholder === 'default' ? ucfirst($name):$placeholder}}"
          id="{{$name}}"
-         value="{{old($name)}}"
+
          @if($maxLength)
              maxlength="{{$maxLength}}"
          @endif
-         @if($require)
-             required
-         @endif
-     ></textarea>
-    @error($name)
-     <p class="text-sm text-red-500 pl-1 font-semibold bg-white ">{{ $message }}</p>
-    @enderror
+
+     >{{ old($name) }}</textarea>
+
 </div>
 
