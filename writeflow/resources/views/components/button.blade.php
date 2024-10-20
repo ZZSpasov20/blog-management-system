@@ -4,8 +4,8 @@
 
     $sizeClass = match($size) {
         'small' => 'text-sm px-4 py-2',
-        'medium' => 'text-base px-6',
-        'large' => 'text-lg px-8',
+        'medium' => 'text-base px-6 py-2',
+        'large' => 'text-lg px-8 py-2',
         'xl' => 'text-xl px-10 py-2.5',
     };
 @endphp

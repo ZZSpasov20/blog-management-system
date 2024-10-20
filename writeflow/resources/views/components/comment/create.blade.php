@@ -1,4 +1,4 @@
-@props(['postId'=>null])
+@props(['postId'=>null, 'published'=>false])
 
 @if ($errors->any())
     <div>
@@ -8,19 +8,24 @@
     </div>
 @endif
 <div class="w-full flex">
-    <form action="{{ route('comments.store', $postId) }}" method="POST" class="flex flex-col justify-start items-start w-full" >
-        @csrf
-        <x-form-textarea
-            name="content"
-            placeholder="Leave a comment"
-            textSize="text-lg"
+    @if($published)
+        <form action="{{ route('comments.store', $postId) }}" method="POST" class="flex flex-col justify-start items-start w-full" >
+            @csrf
+            <x-form-textarea
+                name="content"
+                placeholder="Leave a comment"
+                textSize="text-lg"
             ></x-form-textarea>
-        <x-form-button
-            class="px-6   self-end text-sm"
-        >
-            Add comment
-        </x-form-button>
-    </form>
+            <x-form-button
+                class="px-6   self-end text-sm"
+            >
+                Add comment
+            </x-form-button>
+        </form>
+
+    @else
+        <p class="text-lg">The page is currently in draft. Published it and receive feedback by people's comments.</p>
+    @endif
 </div>
 
 <script>

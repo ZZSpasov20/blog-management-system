@@ -22,7 +22,8 @@
 
     </div>
     <x-comment.create
-        :postId="$post['id']">
+        :postId="$post['id']"
+        :published="$post['published']">
 
     </x-comment.create>
 
@@ -34,6 +35,7 @@
         @foreach($comments as $comment)
             <x-comment
                 :comment="$comment"
+
             ></x-comment>
 
         @endforeach
