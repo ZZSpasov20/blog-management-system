@@ -19,7 +19,25 @@
             </p>
         </div>
         <p class="text-lg pt-2 break-words text-textColor">{{$post['content']}}</p>
+
     </div>
+    <x-comment.create
+        :postId="$post['id']">
+
+    </x-comment.create>
+
+    <h1 class="text-3xl text-textColor font-bold">Comments</h1>
+
+    @if($comments->isEmpty())
+        <p class="text-textColor text-lg">Currently, there are no comments here.</p>
+    @else
+        @foreach($comments as $comment)
+            <x-comment
+                :comment="$comment"
+            ></x-comment>
+
+        @endforeach
+    @endif
     @can('edit', $post)
         <div class="w-full h-20  fixed bottom-0 left-0 border-t-textColor border-t-[1px] border-t-solid flex items-center pl-20 pr-20 bg-white justify-between">
             <form action="/posts/{{$post['id']}}" class="flex" method="POST">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -41,3 +42,10 @@ Route::patch('/posts/{post}', [PostController::class, 'update'])
     ->middleware(['auth', 'can:edit,post']);
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])
     ->middleware(['auth', 'can:edit,post']);
+
+Route::post('/comments/{post}', [CommentController::class, 'store'])
+    ->middleware('auth')
+    ->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
+    ->middleware('auth', 'can:delete,comment')
+    ->name('comments.destroy');

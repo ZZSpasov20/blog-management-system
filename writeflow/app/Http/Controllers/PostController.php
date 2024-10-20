@@ -51,7 +51,8 @@ class PostController extends Controller
         return redirect()->route('posts.userPosts');
     }
     public  function show(Post $post){
-        return view('post.show', compact('post'));
+        $comments = $post->comments()->with('user')->simplePaginate(15);
+        return view('post.show', compact('post', 'comments'));
     }
     public function edit(Post $post){
         return view('post.edit', compact('post'));

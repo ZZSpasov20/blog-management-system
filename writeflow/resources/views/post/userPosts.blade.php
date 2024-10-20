@@ -9,13 +9,14 @@
 
             @if($posts->isEmpty())
                 <p class="text-textColor text-lg">Sorry, but currently you do not have posts.</p>
+
+            @else
+                @foreach($posts as $post)
+                    <x-post :post="$post"></x-post>
+
+                @endforeach
+
             @endif
-
-            @foreach($posts as $post)
-                <x-post :post="$post"></x-post>
-
-            @endforeach
-
         </div>
     </x-structure>
 

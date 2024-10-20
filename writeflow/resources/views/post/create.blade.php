@@ -14,7 +14,7 @@
 
         @endif
         <div class="w-full flex  ">
-            <form action="/posts" method="POST" class="flex flex-col bg-red-600 " id="post_form">
+            <form action="/posts" method="POST" class="flex flex-col " id="post_form">
                 @csrf
                 <x-form-textarea name="title" maxlength="250" class="font-postTitle textarea"></x-form-textarea>
                 <x-form-textarea name="content" textSize="text-xl" placeholder="Write your blog here..." class="font-postTitle textarea  "></x-form-textarea>
