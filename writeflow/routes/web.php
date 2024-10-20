@@ -4,6 +4,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SaveController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Policies\PostPolicy;
@@ -49,3 +50,13 @@ Route::post('/comments/{post}', [CommentController::class, 'store'])
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
     ->middleware('auth', 'can:delete,comment')
     ->name('comments.destroy');
+
+Route::get('/saves', [SaveController::class, 'index'])
+    ->middleware('auth')
+    ->name('saves.index');
+Route::post('/saves/{post}', [SaveController::class, 'store'])
+    ->middleware('auth')
+    ->name('saves.store');
+Route::delete('/saves/{post}', [SaveController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('saves.destroy');

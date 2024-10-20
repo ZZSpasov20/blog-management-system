@@ -13,6 +13,25 @@
             </p>
         </div>
         <p class="text-3xl text-textColor font-bold w-[460px] ">{{$post['title']}}</p>
-        <a href="/posts/{{ $post['id'] }}" class="text-blue-600">See more</a>
+       <div class="w-full justify-between flex">
+           <a href="/posts/{{ $post['id'] }}" class="text-blue-600">See more</a>
+           @if($post['user']['id'] ==auth()->id())
+               <p class="text-xs">Your post</p>
+           @else
+               @can('is-saved', $post)
+
+                   <form action="/saves/{{$post['id']}}" method="POST">
+                       @csrf
+                       @method('DELETE')
+                       <x-form-button class="text-xs">Unsaved</x-form-button>
+                   </form>
+               @else
+                   <form action="/saves/{{$post['id']}}" method="POST">
+                       @csrf
+                       <x-form-button class="text-xs">Save</x-form-button>
+                   </form>
+               @endcan
+           @endif
+       </div>
     </div>
 </div>

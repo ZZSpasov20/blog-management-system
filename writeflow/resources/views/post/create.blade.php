@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
-<x-head>Write a post - Writeflow</x-head>
+<x-head>Write - Writeflow</x-head>
 
 <body >
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
-<x-head>Your posts - Writeflow</x-head>
+<x-head>Post - Writeflow</x-head>
 
 <body >
 <x-structure positionOfContent="justify-start" maxWidth="max-w-[700px]" :footer="false">

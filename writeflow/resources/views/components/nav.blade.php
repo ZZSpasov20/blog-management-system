@@ -5,6 +5,7 @@
         <a href="{{route('posts.index')}}">Posts</a>
         <a href="{{route('posts.create')}}">Write</a>
         <a href="{{route('posts.userPosts')}}">My posts</a>
+        <a href="{{route('saves.index')}}">Saved</a>
         @guest
             <x-button href="{{route('register')}}">Get started</x-button>
         @endguest

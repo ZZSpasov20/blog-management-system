@@ -1,7 +1,7 @@
 @php use App\Models\Post;use App\Models\User; @endphp
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<x-head>Writeflow</x-head>
+<x-head>Home - Writeflow</x-head>
 <body >
 
     <x-structure positionOfContent="justify-center">

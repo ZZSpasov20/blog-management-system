@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Save;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index(){
+
         $posts = Post::with('user')
             ->where('published',1)
             ->latest()
             ->simplePaginate(10);
+
         return view('post.index', compact('posts'));
     }
     public function create(){

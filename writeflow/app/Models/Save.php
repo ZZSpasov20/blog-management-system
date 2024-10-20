@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 class Save extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id', 'post_id'];
     protected $casts = [
         'id' => 'string',
     ];
